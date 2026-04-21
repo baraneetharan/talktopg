@@ -16,10 +16,11 @@ public class OpenAIConfig {
     private String apiKey;
 
     @Bean
-public OpenAIClient openAIClient() {
-    return OpenAIOkHttpClient.builder()
-            .baseUrl("https://models.inference.ai.azure.com")
-            .apiKey(apiKey)
-            .build();
-}
+    public OpenAIClient openAIClient() {
+        System.out.println("OpenAI API Key: " + apiKey);
+        return OpenAIOkHttpClient.builder()
+                .baseUrl("https://models.inference.ai.azure.com")
+                .apiKey(apiKey)
+                .build();
+    }
 }
